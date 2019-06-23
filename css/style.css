@@ -6,3 +6,22 @@ medium green: #55c57a
 dark green: #28b485
 */
 
+/* making every browser read the page the same way */
+* { /* the universal selector will grab every single tag and apply the declarations */
+    margin: 0; /* remove the default margin and padding */
+    padding: 0;
+    box-sizing: border-box; /* changes box border model, margin and */
+    /* padding are no longer added to the total width/height that we specify for boxes */
+}
+
+body { /* font properites changed in the body tag because font properties are inherited */
+    font-family: "Lato", sans-serif; /* the parent element will be inherited by all children elements */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7; /* 1.7 times bigger than predefined line height */
+    color: #777;
+}
+
+.header {
+    
+}
