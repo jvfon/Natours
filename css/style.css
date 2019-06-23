@@ -20,8 +20,31 @@ body { /* font properites changed in the body tag because font properties are in
     font-size: 16px;
     line-height: 1.7; /* 1.7 times bigger than predefined line height */
     color: #777;
+    padding: 30px; /* white border, doesn't get inherited */
 }
 
 .header {
+    height: 95vh; /* at every point, the box will be 95% of the viewport height */
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(26, 243, 171, 0.8)), url("../img/hero.jpg"); 
+    /* 2 images one of top of the other */
+    /* to right bottom means the gradient starts at the upper left corner and goes to the bottom right */
+    /* change opacity, hover over color, click top of color picker to change to rgba */
+        /* move slider down to 0.8  - 80% of the color is visible */
+    /* to get to the image we need to go one folder up ../ */
     
-}
+    background-size: cover; /* cover tries to fit element inside of the box */
+    background-position: top; /* makes the top of the image stay at the top of the container */
+        /* the browser resizes, the image at the top stays the same */   
+
+    /* specify a polygon where image will still be visible */
+    /* specify 4 corners that make up a window where the img will show through */
+    /* start at the top left corner and move clockwise */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /* (x y, x y, x y, x y); (0 0 starts at zero */
+    /* (100% 0) we want 100% in the x direction but no change on y axis */
+    /* we can use any other unit we want */
+    /* 75vh = 75% of the viewport height, changes when browser is resized */
+}    
+
+
+
