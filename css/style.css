@@ -59,4 +59,35 @@ body { /* font properites changed in the body tag because font properties are in
     height: 35px; /* the width will scale accordinly */
 }
 
+.text-box {
+    position: absolute;
+    top: 40%; /* 40% of the parent height */
+    left: 50%;
+    transform: translate(-50%, -50%); /* -50% on X and Y coordinates in relation */ 
+                                    /* to the element itself, not the parent element */
+}
+
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* display both lines as block elements */
+/* they will take up the whole width */
+/* a line break is created */
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400; /* by default h1 has a higher font-weight */
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
+
 
