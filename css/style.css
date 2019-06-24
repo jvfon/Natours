@@ -34,7 +34,9 @@ body { /* font properites changed in the body tag because font properties are in
     
     background-size: cover; /* cover tries to fit element inside of the box */
     background-position: top; /* makes the top of the image stay at the top of the container */
-        /* the browser resizes, the image at the top stays the same */   
+        /* the browser resizes, the image at the top stays the same */  
+        
+    position: relative;
 
     /* specify a polygon where image will still be visible */
     /* specify 4 corners that make up a window where the img will show through */
@@ -46,5 +48,15 @@ body { /* font properites changed in the body tag because font properties are in
     /* 75vh = 75% of the viewport height, changes when browser is resized */
 }    
 
+.logo-box {
+    position: absolute;
+    top: 40px; /* the reference position from where top/left start is the */
+    left: 40px; /* parent element that has position: relative, the header */
+                /* look at the html file to see who is the parent */
+}
+
+.logo {
+    height: 35px; /* the width will scale accordinly */
+}
 
 
