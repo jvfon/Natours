@@ -65,6 +65,8 @@ body { /* font properites changed in the body tag because font properties are in
     left: 50%;
     transform: translate(-50%, -50%); /* -50% on X and Y coordinates in relation */ 
                                     /* to the element itself, not the parent element */
+    /* move the white button to the center */
+    text-align: center;
 }
 
 
@@ -75,6 +77,9 @@ body { /* font properites changed in the body tag because font properties are in
     /* at the end of an animation, the animated elements seem to */ 
     /* move up a little, to fix it: */
     backface-visibility: hidden;
+
+    /* move the text button down */
+    margin-bottom: 60px;
 
 }
 
@@ -162,4 +167,44 @@ body { /* font properites changed in the body tag because font properties are in
         opacity: 1;   
         transform: translate(0);
     }
+}
+
+/* :link a psedo class, a state of the selector */
+.btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+
+    /* padding: top/bottom left/right */
+    padding: 15px 40px;
+
+    /* display as a "block" */
+    /* do this for elements that you want to add padding */
+    /* padding from this element won't overlap other elements */
+    /* still an inline element so it's treated as text */
+    display: inline-block;
+    border-radius: 100px;
+    
+    /* all properties will be used in the animation for .2 seconds */
+    transition: all .2s;
+}
+
+.btn:hover {
+    /* make the button move up */
+    transform: translateY(-3px);
+
+    /* 0 we don't want a shadow on the x direction */
+    /* 10px of shadow on the y axis */
+    /* 20px of blur */
+    /* shadow color with .2 or 20% transparency value */
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
