@@ -81,6 +81,21 @@ body { /* font properites changed in the body tag because font properties are in
     font-size: 60px;
     font-weight: 400; /* by default h1 has a higher font-weight */
     letter-spacing: 35px;
+
+    /* to make the animation work we need the name of the animation and */
+    /* its duration */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+
+    /* a function that defines how animation will proceed */
+    /* how fast/slow the parameter specified at @keyframes will proceed over time */
+    /* the animation will become slower as it ends */
+    animation-timing-function: ease-out;
+    
+    /* animation repeated 3 times */
+    /*animation-iteration-count: 3;
+    animation-delay: 3s;
+    */
 }
 
 .heading-primary-sub {
@@ -88,6 +103,56 @@ body { /* font properites changed in the body tag because font properties are in
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+ 
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 
+/* for browser performance is better to animate only 2 different properites: */
+/* opacity and transform */
+@keyframes moveInLeft { /* moveInLeft, name of the animation */  
+    /* specify what happens every moment in the animation */
+    /* 0% is before the animation actually starts */
+    /* opacity 0, the element is invisible */
+    0% {
+        opacity: 0;
 
+        /* we want the element to move on the x axis  */
+        /* -100 becuase we want the element to start more to the left */
+        /* the animation goes from left to right. */
+        /* a positive value means it goes to the right */
+        transform: translateX(-100px);
+    }
+
+    80% {
+        /* the element moves a little bit to the right */
+        transform: translateX(10px);
+    }
+
+    /* when the animation finishes */
+    /* opacity 1, the element is visible */
+    100% {
+        opacity: 1;
+
+        /* we want the element to stay put at the end of the animation */    
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;   
+        transform: translate(0);
+    }
+}
